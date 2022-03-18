@@ -31,5 +31,20 @@ document.getElementById('key-pad').addEventListener('click', function (event) {
         const newNumber = previousNumber + number;
         calcInput.value = newNumber;
     }
-
 })
+//======= time to check pin code =======
+function verifyPin() {
+    const pin = document.getElementById('display-pin').value;
+    const typedNumbers = document.getElementById('typed-numbers').value;
+
+    const successMessage = document.getElementById('pin-currect');
+    const failMessage = document.getElementById('pin-wrong');
+    if (pin == typedNumbers) {
+        successMessage.style.display = 'block';
+        failMessage.style.display = 'none'
+    }
+    else {
+        successMessage.style.display = 'none';
+        failMessage.style.display = 'block'
+    }
+}
